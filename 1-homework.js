@@ -1,3 +1,4 @@
+// TASK 1 start here
 let biodata = [
     {
         name: `Mohammad Luqman Grahito`,
@@ -39,14 +40,15 @@ let biodata = [
     }
 ]
 
-const arr = [`mtk`, `bahasaIndonesia`, `bahasaInggris`, `ipa`]
 
+// TASK 2 start here
 let subject = {
     mtk: 10,
     bahasaIndonesia: 45,
     bahasaInggris: 50,
     ipa: 50
 }
+let arr = [`mtk`, `bahasaIndonesia`, `bahasaInggris`, `ipa`]
 
 let average = 0
 for (let i = 0; i < arr.length; i++) {
@@ -57,14 +59,14 @@ for (let i = 0; i < arr.length; i++) {
 average = (Math.round(average));
 
 if (isNaN(average)) {
-    console.log(`invalid input`) 
-} else if (average >=90) {
+    console.log(`invalid input`)
+} else if (average >= 90) {
     console.log(`Rata-rata = ${average} Grade = A`);
-} else if ( average >=80 && average <= 89) {
+} else if (average >= 80 && average <= 89) {
     console.log(`Rata-rata = ${average} Grade = B`);
-} else if ( average >=70 && average <= 79) {
+} else if (average >= 70 && average <= 79) {
     console.log(`Rata-rata = ${average} Grade = C`);
-} else if (average >=60 && average <= 69 ) {
+} else if (average >= 60 && average <= 69) {
     console.log(`Rata-rata = ${average} Grade = D`);
 } else {
     console.log(`Rata-rata = ${average} Grade = E`);
@@ -72,44 +74,48 @@ if (isNaN(average)) {
 
 
 
-/*
-let angka = 5
+// TASK 3 start here
+const printSegitiga = 5
+let col = 1
 
-for (let i=angka; i >0 ; i--) {
-    let output =''
+for (let i = printSegitiga; i > 0; i--) {
+    let output = ''
 
-    for (let j=i; j>0; j--) {
-        output += angka
-    } angka--
+    for (let j = i; j > 0; j--) {
+        output += col
+        col++
+    }
+    col = 1
     console.log(Number(output))
 }
 
 
+
+// TASK 4 start here
 let data = {
     id: 1,
     name: "Leanne Graham",
     username: "Bret",
     email: "Sincere@april.biz",
     address: {
-                street: "Kulas Light",
-                suite: "Apt. 556",
-                city: "Gwenborough",
-                zipcode: "92998-3874",
+        street: "Kulas Light",
+        suite: "Apt. 556",
+        city: "Gwenborough",
+        zipcode: "92998-3874",
     },
     phone: "1-770-736-8031 x56442",
     website: "hildegard.org",
-    }
+}
 
 const modifyData = {
     name: `Mohammad Luqman Grahito`,
     email: `luqmangrahito@gmail.com`,
-    hobbies : [`reading`, `studying`]
+    hobbies: [`reading`, `studying`]
 }
 
-const combinedData = {...data, ...modifyData}
+const combinedData = { ...data, ...modifyData }
 console.log(combinedData);
 
-const {id, name, username,email, address, ...rest} = data
-const {street, suite, city, zipcode} = address
+const { id, name, username, email, address, ...rest } = data
+const { street, suite, city, zipcode } = address
 console.log(`${street} dan ${city}`);
-*/
