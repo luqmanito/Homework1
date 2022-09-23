@@ -7,20 +7,20 @@ let biodata = [
         isMarried: true,
         schoolList: [
             {
-                highSchool: `SMAN 13 Bandung`,
+                name: `SMAN 13 Bandung`,
                 yearIn: 2009,
                 yearOut: 2012,
                 major: `IPA`
 
             },
             {
-                college1: `Politeknik Negeri Bandung`,
+                name: `Politeknik Negeri Bandung`,
                 yearIn: 2012,
                 yearOut: 2015,
                 major: `Teknik Mesin`
             },
             {
-                college2: `Universitas Jenderal Achmad Yani`,
+                name: `Universitas Jenderal Achmad Yani`,
                 yearIn: 2016,
                 yearOut: 2019,
                 major: `Teknik Mesin`
@@ -43,9 +43,9 @@ let biodata = [
 
 // TASK 2 start here
 let subject = {
-    mtk: 10,
+    mtk: 100,
     bahasaIndonesia: 45,
-    bahasaInggris: 50,
+    bahasaInggris: 100,
     ipa: 50
 }
 let arr = [`mtk`, `bahasaIndonesia`, `bahasaInggris`, `ipa`]
@@ -78,17 +78,20 @@ if (isNaN(average)) {
 const printSegitiga = 5
 let col = 1
 
-for (let i = printSegitiga; i > 0; i--) {
-    let output = ''
-
-    for (let j = i; j > 0; j--) {
-        output += col
-        col++
+if (isNaN(printSegitiga)) {
+    console.log(`invalid input`);
+} else {
+    for (let i = printSegitiga; i > 0; i--) {
+        let output = ''
+    
+        for (let j = i; j > 0; j--) {       // loop ke samping
+            output += col
+            col++
+        }
+        col = 1         // reset
+        console.log(Number(output))
     }
-    col = 1
-    console.log(Number(output))
 }
-
 
 
 // TASK 4 start here
@@ -112,10 +115,11 @@ const modifyData = {
     email: `luqmangrahito@gmail.com`,
     hobbies: [`reading`, `studying`]
 }
-
+// tambah data
 const combinedData = { ...data, ...modifyData }
 console.log(combinedData);
 
-const { id, name, username, email, address, ...rest } = data
-const { street, suite, city, zipcode } = address
+// ambil data
+const { name, email, hobbies, address } = data
+const { street, city } = address
 console.log(`${street} dan ${city}`);
